@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+<!-- body start here-->
+  <body>
+
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container-fluid">
+        <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th width="15%">Time</th>
+            <th width="80%">Task</th>
+            <th width="5%">Save</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-success">
+            <td>8 AM</td>
+            <td>Doe</td>
+            <td><i class="fa fa-save" style="font-size:24px;"></i></td>
+          </tr>
+          <tr class="table-danger">
+            <td>9 AM</td>
+            <td>Moe</td>
+            <td><i class="fa fa-save" style="font-size:24px;"></i></td>
+          </tr>
+          <tr class="table-light">
+            <td>10 AM</td>
+            <td>Dooley</td>
+            <td><i class="fa fa-save" style="font-size:24px;"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- script starts here -->
+    <script type="text/javascript">
+      // 
+      // display todays date using moment.js
+      // show day, month, date, and year
+      //
+      var todaysDate = moment();
+      var eDate = document.getElementById('currentDay');
+      eDate.innerHTML = todaysDate.format('dddd, MMMM D, YYYY');
+    //
+    // Render a new row for each time slot
+    // 9 one-hour slots
+    // may be user selectable - later
+    // 
+    var todos = [];  // will populate this from local storage
+    var numSlotsperday = 9; // number of hour slots per day
+    $("#empty-div").html("<div class=");
+
+    // We can just as easily append a new line using a similarly simple .append method.
+   
+    for (var i = 0; i < numSlotsperday; i++) {
+        var li = document.createElement("li");
+        li.textContent = todo;
+    li.setAttribute("data-index", i);
+
+    var button = document.createElement("button");
+    button.textContent = "Complete";
+
+    li.appendChild(button);
+    todoList.appendChild(li);
+  }
+  $("#empty-div").html("</div>");
+  $("#empty-div").append("A pleasure to meet you!");
+    </script>
+   <!-- <script src="./script.js"></script> -->
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
+  </body>
+</html>
